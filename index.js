@@ -178,8 +178,8 @@ app.post('/uploadimage', (req, res) => {
       return res.json(fileName)
    });
 })
-
-var server = app.listen(8000, function () {
+var port  = process.env.PORT;
+var server = app.listen(port, function () {
    var host = server.address().address
    var port = server.address().port
    console.log("Example app listening at http://%s:%s", host, port)
