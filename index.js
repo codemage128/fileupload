@@ -35,14 +35,12 @@ app.get('/', async function (req, res) {
    result.forEach(doc => {
       returnData.push(doc);
    });
-   fs.readdir("uploads", (err, files) => {
-      if (err) throw err;
-      for (const file of files) {
-         fs.unlink(path.join("uploads", file), err => {
-            if (err) throw err;
-         });
-      }
-   });
+   // fs.readdir("uploads", (err, files) => {
+   //    for (const file of files) {
+   //       fs.unlink(path.join("uploads", file), err => {
+   //       });
+   //    }
+   // });
    res.render("index.ejs", { good: "title", returnData: returnData });
 })
 
